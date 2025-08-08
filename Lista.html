@@ -1,0 +1,45 @@
+<!-- lista.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lista de Estoque</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header>
+  <h1>Controle de Estoque - Cosméticos</h1>
+  <nav>
+    <a href="index.html">Dashboard</a>
+    <a href="cadastro.html">Cadastrar Produto</a>
+    <a href="lista.html">Lista de Estoque</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Lista de Estoque</h2>
+  <input type="text" id="busca" placeholder="Buscar produto por nome..." />
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Marca</th>
+        <th>Categoria</th>
+        <th>Qtd</th>
+        <th>Preço</th>
+        <th>Validade</th>
+        <th>Localização</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="tabelaEstoque"></tbody>
+  </table>
+</div>
+
+<script src="js/funcoes.js"></script>
+<script src="js/lista.js"></script>
+
+</body>
+</html>

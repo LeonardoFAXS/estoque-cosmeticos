@@ -1,0 +1,39 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dashboard - Estoque Cosméticos</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header>
+  <h1>Controle de Estoque - Cosméticos</h1>
+  <nav>
+    <a href="index.html">Dashboard</a>
+    <a href="cadastro.html">Cadastrar Produto</a>
+    <a href="lista.html">Lista de Estoque</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Resumo do Estoque</h2>
+  <p>Total de produtos cadastrados: <strong id="totalProdutos">0</strong></p>
+  <p>Produtos com estoque baixo (&le; 5): <strong id="estoqueBaixo">0</strong></p>
+</div>
+
+<script src="js/funcoes.js"></script>
+<script>
+  // Atualiza o dashboard com dados do LocalStorage
+  document.addEventListener('DOMContentLoaded', () => {
+    const produtos = carregarProdutos();
+    document.getElementById('totalProdutos').innerText = produtos.length;
+    const baixo = produtos.filter(p => p.quantidade <= 5).length;
+    document.getElementById('estoqueBaixo').innerText = baixo;
+  });
+</script>
+
+</body>
+</html>
